@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Optimizer Pro</title>
+    <link rel="stylesheet" href="\static\css\style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Code Optimizer Pro</h1>
+            <p>Advanced C and Python code optimization with LLVM and AST analysis</p>
+        </div>
+
+        <div class="main-content">
+            <div class="toolbar">
+                <div class="language-selector">
+                    <label for="language">Language:</label>
+                    <select id="language">
+                        <option value="c">C</option>
+                        <option value="python">Python</option>
+                    </select>
+                </div>
+                <button id="optimize-btn" class="optimize-btn">
+                    ⚡ Optimize Code
+                </button>
+            </div>
+
+            <div class="optimization-options">
+                <div class="options-title">Optimization Techniques:</div>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="dead-code" checked>
+                        <label for="dead-code">Dead Code Removal</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="loop-opt" checked>
+                        <label for="loop-opt">Loop Optimization</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="constant-fold" checked>
+                        <label for="constant-fold">Constant Folding</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="strength-reduction" checked>
+                        <label for="strength-reduction">Strength Reduction</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="function-inline" checked>
+                        <label for="function-inline">Function Inlining</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-message" id="error-message"></div>
+
+            <div class="editor-container" style="position: relative;">
+                <div class="loading-overlay" id="loading-overlay">
+                    <div class="loading-spinner"></div>
+                </div>
+
+                <div class="editor-panel">
+                    <div class="editor-header input-header">📝 Input Code</div>
+                    <textarea id="input-code" class="editor" placeholder="Enter your C or Python code here...">Enter your C or Python code here...</textarea>
+                </div>
+
+                <div class="editor-panel">
+                    <div class="editor-header output-header">✨ Optimized Code</div>
+                    <textarea id="output-code" class="editor output-editor" readonly
+                        placeholder="Optimized code will appear here..."></textarea>
+                </div>
+            </div>
+
+            <div class="metrics" id="metrics" style="display: none;">
+                <div class="metric-card">
+                    <div class="metric-value" id="lines-removed">0</div>
+                    <div class="metric-label">Lines Removed</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="optimizations-applied">0</div>
+                    <div class="metric-label">Optimizations Applied</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="processing-time">0ms</div>
+                    <div class="metric-label">Processing Time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="size-reduction">0%</div>
+                    <div class="metric-label">Size Reduction</div>
+                </div>
+            </div>
+
+            <div class="status-bar">
+                <div class="status-indicator">
+                    <div class="status-dot" id="status-dot"></div>
+                    <span id="status-text">Ready</span>
+                </div>
+                <div id="status-info">Select language and paste your code to optimize</div>
+            </div>
+        </div>
+    </div>
+    <script src="\static\js\script.js"></script>
+</body>
+
+</html>
