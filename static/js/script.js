@@ -21,7 +21,7 @@ class CodeOptimizer {
             attachEventListeners() {
                 this.optimizeBtn.addEventListener('click', () => this.optimizeCode());
                 this.languageSelect.addEventListener('change', () => this.updatePlaceholders());
-
+                
                 // Auto-resize textareas
                 [this.inputCode, this.outputCode].forEach(textarea => {
                     textarea.addEventListener('input', () => this.autoResize(textarea));
@@ -31,9 +31,10 @@ class CodeOptimizer {
             updatePlaceholders() {
                 const language = this.languageSelect.value;
                 const placeholders = {
-                    c: `Enter C or Python code for demonstration`
+                    c: `Enter C or Python Code to optimize.`,
+                    python: `Enter C or Python Code to optimize.`
                 };
-
+                
                 if (this.inputCode.value.trim() === '' || this.inputCode.value === this.inputCode.getAttribute('placeholder')) {
                     this.inputCode.value = placeholders[language];
                 }
@@ -48,16 +49,16 @@ class CodeOptimizer {
             getSelectedOptimizations() {
                 const optimizations = [];
                 const checkboxes = [
-                    'dead-code', 'loop-opt', 'constant-fold',
+                    'dead-code', 'loop-opt', 'constant-fold', 
                     'strength-reduction', 'function-inline'
                 ];
-
+                
                 checkboxes.forEach(id => {
                     if (document.getElementById(id).checked) {
                         optimizations.push(id.replace('-', '_'));
                     }
                 });
-
+                
                 return optimizations;
             }
 
@@ -78,7 +79,7 @@ class CodeOptimizer {
             showLoading(show = true) {
                 this.loadingOverlay.style.display = show ? 'flex' : 'none';
                 this.optimizeBtn.disabled = show;
-
+                
                 if (show) {
                     this.setStatus('processing', 'Processing', 'Optimizing your code...');
                 }
