@@ -1,8 +1,3 @@
-"""
-Code Optimization Tool Package
-Supports C (via LLVM) and Python (via AST) optimization
-"""
-
 __version__ = "1.0.0"
 __author__ = "Code Optimizer Team"
 
